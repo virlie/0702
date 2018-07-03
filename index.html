@@ -1,22 +1,40 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styles.css">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script type="text/javascript" src="js/scripts.js"></script>
     <meta charset="utf-8">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-
     <title>Movie Tickets</title>
   </head>
   <body>
     <div class="contaier">
-      <h1>It's Movie Time!</h1>
-      <img src="image/orangeWall.jpg" alt="mid-century style wall paper">
-
+     <h1>It's Movie Time!</h1>
+     <img id="background" src="image/orangeWall.jpeg" alt="mid-century style wall paper">
+     <div class="row">
+       <div class="col-md-6">
+         <h2>Please fill out the following form to see the ticket price:</h2>
+         <form id="ticket-price">
+           <div class="form-group">
+             <label for="movie-title">Select Movie:</label>
+             <select type="text" class="form-control" id="movie-title">
+               <option></option>
+               <option>Avengers Infinity War</option>
+               <option>Incredibles2</option>
+               <option>Harry Potter Marathon</option>
+             </select>
+           </div>
+           <div class="form-group">
+             <label for="movie-time">Select Time of Day: </label>
+             <select type="text" class="form-control" id="movie-time">
+               <option></option>
+               <option>Early Bird (before Noon)</option>
+               <option>Matinee (Noon-5pm)</option>
+               <option>Evening (5pm-Close)</option>
+             </select>
+           </div>
+           
     </div>
-
-
   </body>
 </html>
