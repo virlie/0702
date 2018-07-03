@@ -25,38 +25,3 @@ function Ticket(title, time, age) {
   this.age = age;
   this.price = 10;
 }
-
-
-// Discount Prototypes
-Ticket.prototype.timeDiscount = function() {
-  if (this.time === "Early Bird (before Noon)") {
-    this.price -= 3;
-  } else if (this.time === "Matinee (Noon-5pm)") {
-    this.price -= 3;
-  } else {
-    this.price = 10;
-  }
-  return + this.price;
-};
-
-Ticket.prototype.ageDiscount = function() {
-  if (this.age <= 12) {
-    this.price -= 3;
-  } else if (this.age >= 65) {
-    this.price -= 5;
-  } else {
-    this.price = 10;
-  }
-  return this.price;
-};
-
-Ticket.prototype.movieDiscount = function() {
-  if (this.title === "") {
-    this.price -= 6;
-  } else if (this.title === "Avengers Infinity War") {
-    this.price += 2;
-  } else {
-    this.price = 10;
-  }
-  return this.price;
-};
