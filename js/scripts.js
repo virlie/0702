@@ -1,27 +1,37 @@
-// user interface logic
-$(document).ready(function() {
-  $("#ticket-price").submit(function(event){
-    event.preventDefault();
-    var inputtedMovieTitle = $("#movie-title").val();
-    var inputtedMovieTime = $("#movie-time").val();
-    var inputtedAge = parseInt($("#age").val());
-    var ticketPrice = new Ticket(inputtedMovieTitle, inputtedMovieTime, inputtedAge);
-
-    var ageDiscount = ticketPrice.ageDiscount();
-    var timeDiscount = ticketPrice.timeDiscount();
-    var movieDiscount = ticketPrice.movieDiscount();
-    var outputPrice = Math.min(ageDiscount, timeDiscount, movieDiscount);
-
-   $(".movie-title").text(inputtedMovieTitle);
-   $(".movie-time").text(inputtedMovieTime);
-   $("ul#price").append("$" + outputPrice);
- });
-});
-
-//business logic
-function Ticket(title, time, age) {
-  this.title = title;
-  this.time = time;
+// Business logic
+function Ticket(age, movie, time) {
   this.age = age;
-  this.price = 10;
+  this.movie = movie;
+  this.time = time;
 }
+
+function ticketLogic(age, movie, time) {
+  var ticketprice = 5;
+
+  if (age < 18) {
+    ticketprice += 0;
+  } else if (age < 55) {
+    ticketprice += 3;
+  } else {
+    ticketprice += 1.5;
+  }
+  if (movie === "premium") ticketprice += 3;
+  if (time === "mat") ticketprice -= 1;
+  ticketprice.toFixed(2);
+  return ticketprice.toFixed(2);
+}
+
+
+
+
+//user interface logic
+$(document).ready(function() {
+  $("form#movie").submit(function(event) {
+    event.preventDefault();
+    var age = $("input#age").val();
+    var movie = $("#movievalue").val();
+    var time = $("#movietime").val();
+    var ticket = new Ticket(age, movie, time);
+    $("#price").append(ticketLogic(ticket.age, ticket.movie, ticket.time));
+  })
+})
