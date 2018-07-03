@@ -32,6 +32,6 @@ $(document).ready(function() {
     var movie = $("#movievalue").val();
     var time = $("#movietime").val();
     var ticket = new Ticket(age, movie, time);
-    $("#price").append(ticketLogic(ticket.age, ticket.movie, ticket.time));
+    $("#price").text(ticketLogic(ticket.age, ticket.movie, ticket.time));
   })
 })
