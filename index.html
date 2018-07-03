@@ -13,32 +13,28 @@
   </head>
   <body>
     <div class="container">
-     <h1>It's Movie Time!</h1>
-     <img id="movieTime" src="image/movieTime1.jpg" alt="popcorn and ticket image">
-     <div class="row">
-       <div class="col-md-6">
-         <h2>Please fill out the following form to see the ticket price:</h2>
-         <form id="ticket-price">
-           <div class="form-group">
-             <label for="movie-title">Select Movie:</label>
-             <select type="text" class="form-control" id="movie-title">
-               <option></option>
-               <option>Avengers Infinity War</option>
-               <option>Incredibles2</option>
-               <option>Harry Potter Marathon</option>
-             </select>
-           </div>
-           <div class='input-group date' id='datetimepicker3'>
+      <form id="movieInput">
+        <div class="form-group">
+          <p>Pick a movie:</p>
+          <select class="form-control" id="movieSelector" required>
+            <option value="0"></option>
+            <option value="1">Incredibles 2</option>
+            <option value="2">Avengers Infinity War</option>
+            <option value="3">Black Panter</option>
+            <option value="4">Harry Potter Marathon</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <div class='input-group date' id='datetimepicker3'>
             <input id="timeSelector" type='time' class="form-control" required/>
-           </div>
-       </div>
-       <div class="form-group">
-        <label for="ageSelector">How old are you?</label>
-        <input class="form-control" type="number" id="ageSelector" required>
-       </div>
-       <button type="submit" class="btn">Show me the money! (price please and thank you)</button>
-       </form>
-      </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="ageSelector">How old are you?</label>
+          <input class="form-control" type="number" id="ageSelector" required>
+        </div>
+        <button type="submit" class="btn">Calculate Pricing</button>
+      </form>
     </div>
   </body>
 </html>
